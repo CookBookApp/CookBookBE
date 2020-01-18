@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
+Recipe.destroy_all
+Ingredient.destroy_all
+Step.destroy_all
+Cookbook.destroy_all
+CookbookRecipe.destroy_all
+Keyword.destroy_all
+RecipeKeyword.destroy_all 
+
 charles = User.create(username:'cbreezy', password:'nah', image:'https://upload.wikimedia.org/wikipedia/commons/6/6a/Chris_Brown_5%2C_2012.jpg')
 dom = User.create(username:'domitalk', password:'nah', image:'https://vignette.wikia.nocookie.net/legendsofthemultiuniverse/images/6/67/Dominic_Toretto.jpeg/revision/latest/scale-to-width-down/340?cb=20170606035117')
 griff = User.create(username:'griff', password:'nah', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfnG_7kjdwli10xTe2qBJAodcXxhOCvAvIJtWhNKgBepA1h4Cb8Q&s')
