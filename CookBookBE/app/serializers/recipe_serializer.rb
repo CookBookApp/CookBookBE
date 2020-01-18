@@ -3,4 +3,5 @@ class RecipeSerializer < ActiveModel::Serializer
   has_one :user
   has_many :steps
   has_many :ingredients
+  has_many :keywords
 end
