@@ -20,7 +20,7 @@ griff = User.create(username:'griff', password:'nah', image:'https://encrypted-t
 
 r1 = Recipe.create(description:"blahblahblah", image:'https://hips.hearstapps.com/cosmouk.cdnds.net/15/21/1600x800/landscape_nrm_1432138418-o-poop-emoji-ice-cream-facebook.jpg?resize=480:*', prep_time:'forever', cook_time:'never', total_time:'forever never', user: charles)
 r2 = Recipe.create(description:"pls", image:'https://cdn.shopify.com/s/files/1/2101/2829/products/crab_grab-FA19-Traction-angle-board_poop-brown-292_400x.png?v=1574216729', prep_time:'1', cook_time:'6', total_time:'7', user: dom)
-r3 = Recipe.create(description:"no", image:'https://assets3.thrillist.com/v1/image/1814509/size/tmg-article_default_mobile.jpg', prep_time:'2', cook_time:'7', total_time:'9', user: griff)
+r3 = Recipe.create(description:"no", image:'https://assets3.thrillist.com/v1/image/1814509/size/tmg-article_default_mobile.jpg', prep_time:'2 Mins', cook_time:'7 Mins', total_time:'9 Mins', user: griff)
 r4 = Recipe.create(description:"idk", image:'https://images-na.ssl-images-amazon.com/images/I/71%2BJZuZS2YL._AC_SL1000_.jpg', prep_time:'3', cook_time:'8', total_time:'11', user: dom)
 r5 = Recipe.create(description:"this sux", image:'https://image.shutterstock.com/image-vector/poo-emoticon-emoji-poop-face-260nw-700950988.jpg', prep_time:'4', cook_time:'9', total_time:'13', user: dom)
 r6 = Recipe.create(description:"dont eat this", image:'https://miro.medium.com/max/525/1*p_f8-fZS6VBeVzLWK-RXqw.png', prep_time:'5', cook_time:'10', total_time:'15', user: griff)
