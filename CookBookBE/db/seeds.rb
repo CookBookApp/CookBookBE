@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 User.destroy_all
 Recipe.destroy_all
 Ingredient.destroy_all
@@ -14,64 +15,118 @@ CookbookRecipe.destroy_all
 Keyword.destroy_all
 RecipeKeyword.destroy_all 
 
-charles = User.create(username:'cbreezy', password:'nah', image:'https://upload.wikimedia.org/wikipedia/commons/6/6a/Chris_Brown_5%2C_2012.jpg')
-dom = User.create(username:'domitalk', password:'nah', image:'https://vignette.wikia.nocookie.net/legendsofthemultiuniverse/images/6/67/Dominic_Toretto.jpeg/revision/latest/scale-to-width-down/340?cb=20170606035117')
-griff = User.create(username:'griff', password:'nah', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfnG_7kjdwli10xTe2qBJAodcXxhOCvAvIJtWhNKgBepA1h4Cb8Q&s')
 
-r1 = Recipe.create(description:"blahblahblah", image:'https://hips.hearstapps.com/cosmouk.cdnds.net/15/21/1600x800/landscape_nrm_1432138418-o-poop-emoji-ice-cream-facebook.jpg?resize=480:*', prep_time:'forever', cook_time:'never', total_time:'forever never', user: charles)
-r2 = Recipe.create(description:"pls", image:'https://cdn.shopify.com/s/files/1/2101/2829/products/crab_grab-FA19-Traction-angle-board_poop-brown-292_400x.png?v=1574216729', prep_time:'1', cook_time:'6', total_time:'7', user: dom)
-r3 = Recipe.create(description:"no", image:'https://assets3.thrillist.com/v1/image/1814509/size/tmg-article_default_mobile.jpg', prep_time:'2 Mins', cook_time:'7 Mins', total_time:'9 Mins', user: griff)
-r4 = Recipe.create(description:"idk", image:'https://images-na.ssl-images-amazon.com/images/I/71%2BJZuZS2YL._AC_SL1000_.jpg', prep_time:'3', cook_time:'8', total_time:'11', user: dom)
-r5 = Recipe.create(description:"this sux", image:'https://image.shutterstock.com/image-vector/poo-emoticon-emoji-poop-face-260nw-700950988.jpg', prep_time:'4', cook_time:'9', total_time:'13', user: dom)
-r6 = Recipe.create(description:"dont eat this", image:'https://miro.medium.com/max/525/1*p_f8-fZS6VBeVzLWK-RXqw.png', prep_time:'5', cook_time:'10', total_time:'15', user: griff)
+# USERS
+charles = User.create(username:'Cbreezy', password:'nah', image:'https://upload.wikimedia.org/wikipedia/commons/6/6a/Chris_Brown_5%2C_2012.jpg')
+dom = User.create(username:'Domitalk', password:'nah', image:'https://vignette.wikia.nocookie.net/legendsofthemultiuniverse/images/6/67/Dominic_Toretto.jpeg/revision/latest/scale-to-width-down/340?cb=20170606035117')
+griff = User.create(username:'Griff', password:'nah', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfnG_7kjdwli10xTe2qBJAodcXxhOCvAvIJtWhNKgBepA1h4Cb8Q&s')
+jon = User.create(username: "Jon", password: 'nah', image: 'https://previews.123rf.com/images/alexkava/alexkava1511/alexkava151100010/48395698-black-illustration-of-spoon-fork-and-chef-hat.jpg')
 
-Ingredient.create(recipe: r1, ingredient:'nothing edible')
-Ingredient.create(recipe: r1, ingredient:'no')
-Ingredient.create(recipe: r2, ingredient:'not')
-Ingredient.create(recipe: r2, ingredient:'noth')
-Ingredient.create(recipe: r2, ingredient:'nothi')
-Ingredient.create(recipe: r3, ingredient:'nothin')
-Ingredient.create(recipe: r3, ingredient:'nothing')
-Ingredient.create(recipe: r4, ingredient:'nothing e')
-Ingredient.create(recipe: r4, ingredient:'nothing ed')
-Ingredient.create(recipe: r5, ingredient:'nothing edi')
-Ingredient.create(recipe: r5, ingredient:'nothing edib')
-Ingredient.create(recipe: r6, ingredient:'nothing edibl')
-Ingredient.create(recipe: r6, ingredient:'n')
 
-Step.create(recipe: r1, content:'1')
-Step.create(recipe: r1, content:'2')
-Step.create(recipe: r1, content:'3')
-Step.create(recipe: r2, content:'4')
-Step.create(recipe: r2, content:'5')
-Step.create(recipe: r2, content:'6')
-Step.create(recipe: r3, content:'7')
-Step.create(recipe: r3, content:'8')
-Step.create(recipe: r3, content:'9')
-Step.create(recipe: r4, content:'10')
-Step.create(recipe: r4, content:'11')
-Step.create(recipe: r4, content:'12')
-Step.create(recipe: r5, content:'13')
-Step.create(recipe: r5, content:'14')
-Step.create(recipe: r5, content:'15')
-Step.create(recipe: r6, content:'16')
-Step.create(recipe: r6, content:'17')
-Step.create(recipe: r6, content:'18')
+# RECIPES
+r1 = Recipe.create(description:"Banana Pudding", image:'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/10/21/0/YW0409H_Banana-Cream-Pudding_s4x3.jpg.rend.hgtvcom.826.620.suffix/1406932836501.jpeg', prep_time:'20', cook_time:'45', total_time:'65', user: charles)
+r2 = Recipe.create(description:"Meat Loaf", image:'https://images-gmi-pmc.edge-generalmills.com/3e0ded09-f8a2-45b6-aff7-e08ab138ed84.jpg', prep_time:'35', cook_time:'50', total_time:'125', user: dom)
+r3 = Recipe.create(description:"Lasagna", image:'https://assets.kraftfoods.com/recipe_images/opendeploy/201570_640x428.jpg', prep_time:'25', cook_time:'45', total_time:'70', user: griff)
+r4 = Recipe.create(description:"Chocolate Cake", image:'https://d3awvtnmmsvyot.cloudfront.net/api/file/Jqoi44f2S6aGO6RXDja1/convert?fit=max&w=1450&quality=60&cache=true&rotate=exif&compress=true', prep_time:'30', cook_time:'40', total_time:'110', user: dom)
+r5 = Recipe.create(description:"Roast Chicken", image:'https://assets.marthastewart.com/styles/wmax-750/d47/roast-chicken-vegetables-potatoes-3e8b194b-0819/roast-chicken-vegetables-potatoes-3e8b194b-0819_hz.jpg?itok=UiGQxjuq', prep_time:'45', cook_time:'90', total_time:'135', user: dom)
+r6 = Recipe.create(description:"Enchiladas", image:'https://www.theblackpeppercorn.com/wp-content/uploads/2013/08/Chicken-Enchiladas-full-angle-hires.jpg', prep_time:'90', cook_time:'30', total_time:'120', user: griff)
 
-cb1 = Cookbook.create(user: charles, image:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/1200px-Good_Food_Display_-_NCI_Visuals_Online.jpg', title:'my food sux', description: 'yeet in street')
-cb2 = Cookbook.create(user: dom, image:'https://www.weightwatchers.com/us/sites/default/files/styles/wwvs_default_image/public/article_masthead/0p_foodlist_purple_1200x628.jpg?itok=3ErSwv7S', title:'not good pls stop', description: 'the opposite of fine dining')
-cb3 = Cookbook.create(user: griff, image:'https://assets3.thrillist.com/v1/image/2848840/size/gn-gift_guide_variable_c.jpg', title:'wut iz fewd', description: 'learned how to cook from shrek')
 
+
+# INGREDIENTS
+Ingredient.create(recipe: r1, ingredient:'4 Banana')
+Ingredient.create(recipe: r1, ingredient:'1 tablespoons Vanilla Extract')
+Ingredient.create(recipe: r1, ingredient:'5 ounces Vanilla Pudding Mix')
+Ingredient.create(recipe: r1, ingredient:'2 cups cold milk')
+
+Ingredient.create(recipe: r2, ingredient:'1 pound Ground Beef')
+Ingredient.create(recipe: r2, ingredient:'1 Egg')
+Ingredient.create(recipe: r2, ingredient:'1 chopped Onion')
+Ingredient.create(recipe: r2, ingredient:'1 cup Milk')
+Ingredient.create(recipe: r2, ingredient:'1 cup dried breadcrumbs')
+
+Ingredient.create(recipe: r3, ingredient:'2 cans Canned Tomato Sauce')
+Ingredient.create(recipe: r3, ingredient:'2 tablespoons White Sugar')
+Ingredient.create(recipe: r3, ingredient:'1 1/2 teaspoons dried basil leaves')
+Ingredient.create(recipe: r3, ingredient:'1 Can Crushed Tomatoes')
+Ingredient.create(recipe: r3, ingredient:'2 cloves Garlic')
+Ingredient.create(recipe: r3, ingredient:'12 Lasagna Noodles')
+Ingredient.create(recipe: r3, ingredient:'3/4 pound Ground Beef')
+
+Ingredient.create(recipe: r4, ingredient:'2 cups White Sugar')
+Ingredient.create(recipe: r4, ingredient:'1 3/4 cups All-Purpose Flour')
+Ingredient.create(recipe: r4, ingredient:'2 Eggs')
+Ingredient.create(recipe: r4, ingredient:'3/4 Cocoa Powder')
+Ingredient.create(recipe: r4, ingredient:'1/2 cup Vegetable Oil')
+
+Ingredient.create(recipe: r5, ingredient:'5-6 pound Chicken to Roast')
+Ingredient.create(recipe: r5, ingredient:'Kosher Salt to taste')
+Ingredient.create(recipe: r5, ingredient:'1 Halved Lemon')
+Ingredient.create(recipe: r5, ingredient:'2 tablespoons Butter')
+Ingredient.create(recipe: r5, ingredient:'1 Large Yellow Onion')
+Ingredient.create(recipe: r5, ingredient:'4 Carrots chopped')
+
+Ingredient.create(recipe: r6, ingredient:'1 pound Ground Beef')
+Ingredient.create(recipe: r6, ingredient:'10-14 Corn/Flour Tortillas')
+Ingredient.create(recipe: r6, ingredient:'1 cup Chopped Green Onions')
+Ingredient.create(recipe: r6, ingredient:'1/2 teaspoon Salt')
+Ingredient.create(recipe: r6, ingredient:'28 ounce Can Enchilada Red Sauce')
+Ingredient.create(recipe: r6, ingredient:'1 Medium Onion')
+Ingredient.create(recipe: r6, ingredient:'2 cups Chicken Broth')
+
+
+
+
+
+#  STEPS
+Step.create(recipe: r1, content:'First Step')
+Step.create(recipe: r1, content:'Second Step')
+Step.create(recipe: r1, content:'Third Step')
+
+Step.create(recipe: r2, content:'First Step')
+Step.create(recipe: r2, content:'Second Step')
+Step.create(recipe: r2, content:'Third Step')
+
+Step.create(recipe: r3, content:'First Step')
+Step.create(recipe: r3, content:'Second Step')
+Step.create(recipe: r3, content:'Third Step')
+
+Step.create(recipe: r4, content:'First Step')
+Step.create(recipe: r4, content:'Second Step')
+Step.create(recipe: r4, content:'Third Step')
+
+Step.create(recipe: r5, content:'First Step')
+Step.create(recipe: r5, content:'Second Step')
+Step.create(recipe: r5, content:'Third Step')
+
+Step.create(recipe: r6, content:'First Step')
+Step.create(recipe: r6, content:'Second Step')
+Step.create(recipe: r6, content:'Third Step')
+
+
+
+# COOKBOOKS
+cb1 = Cookbook.create(user: charles, image:'https://www.justonecookbook.com/wp-content/uploads/2018/10/How-to-Build-a-Kitchen-for-Cooking-Japanese-Food-w600.jpg', title:'Charles Cookbook', description: 'A Collection of Charles Recipes ')
+cb2 = Cookbook.create(user: dom, image:'https://learn.compactappliance.com/wp-content/uploads/2018/02/kitchen.jpg', title:'Doms Cookbook', description: 'A Collection of Doms Recipes')
+cb3 = Cookbook.create(user: griff, image:'https://media1.s-nbcnews.com/j/newscms/2019_50/3146046/191212-stock-kitchen-cooking-wok-ew-228p_02b448af054ee73a0103f9b0353a525f.fit-760w.jpg', title:'Griffs Cookbook', description: 'A Collection of Griffs Recipes')
+cb3 = Cookbook.create(user: jon, image:'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2F1550776692%2FGettyImages-887636042.jpg%3Fitok%3Dxrvft3cr', title:'Jons Cookbook', description: 'A Collection of Jons Recipes')
+
+
+# COOKBOOK RECIPES
 CookbookRecipe.create(cookbook:cb1, recipe: r1)
 CookbookRecipe.create(cookbook:cb1, recipe: r2)
 CookbookRecipe.create(cookbook:cb1, recipe: r3)
+
 CookbookRecipe.create(cookbook:cb2, recipe: r1)
 CookbookRecipe.create(cookbook:cb2, recipe: r4)
 CookbookRecipe.create(cookbook:cb2, recipe: r5)
+
 CookbookRecipe.create(cookbook:cb3, recipe: r6)
 CookbookRecipe.create(cookbook:cb3, recipe: r2)
 CookbookRecipe.create(cookbook:cb3, recipe: r3)
 
+
+# KEYWORDS
 k1 = Keyword.create(keyword:'Beef')
 k2 = Keyword.create(keyword:'Chicken')
 k3 = Keyword.create(keyword:'Dessert')
@@ -88,14 +143,27 @@ k13 = Keyword.create(keyword:'Spicy')
 k14 = Keyword.create(keyword:'Vegan')
 k15 = Keyword.create(keyword:'Veggies')
 
-RecipeKeyword.create(keyword: k1, recipe:r1)
-RecipeKeyword.create(keyword: k1, recipe:r3)
-RecipeKeyword.create(keyword: k2, recipe:r1)
-RecipeKeyword.create(keyword: k3, recipe:r2)
-RecipeKeyword.create(keyword: k2, recipe:r4)
-RecipeKeyword.create(keyword: k4, recipe:r6)
-RecipeKeyword.create(keyword: k5, recipe:r5)
+
+# RECIPE KEYWORD
+RecipeKeyword.create(keyword: k10, recipe:r1)
+RecipeKeyword.create(keyword: k3, recipe:r1)
+
+RecipeKeyword.create(keyword: k1, recipe:r2)
 RecipeKeyword.create(keyword: k6, recipe:r2)
+
+RecipeKeyword.create(keyword: k9, recipe:r3)
+RecipeKeyword.create(keyword: k1, recipe:r3)
+
+RecipeKeyword.create(keyword: k3, recipe:r4)
+RecipeKeyword.create(keyword: k10, recipe:r4)
+
+RecipeKeyword.create(keyword: k2, recipe:r5)
+RecipeKeyword.create(keyword: k8, recipe:r5)
+RecipeKeyword.create(keyword: k4, recipe:r5)
+
+RecipeKeyword.create(keyword: k1, recipe:r6)
+RecipeKeyword.create(keyword: k13, recipe:r6)
+
 
 
 
