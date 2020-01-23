@@ -1,5 +1,6 @@
 class RecipeKeywordsController < ApplicationController
-    def create
-
+    def index
+        @recipekeywords = RecipeKeyword.all
+        render json: @recipekeywords, include: ['recipe', 'recipe.user', 'keyword']
     end
 end
