@@ -5,7 +5,8 @@ class CookbooksController < ApplicationController
     end
 
     def create
-
+        @cookbook = Cookbook.create(cookbook_params)
+        render json: @cookbook
     end
 
     def update
@@ -15,4 +16,10 @@ class CookbooksController < ApplicationController
     def destroy
 
     end
+end
+
+private
+
+def cookbook_params
+    params.permit(:user_id, :image, :title, :description)
 end
